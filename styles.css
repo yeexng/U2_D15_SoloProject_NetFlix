@@ -1,0 +1,79 @@
+.bg-black{
+    background-color: #141414;
+}
+
+.netflix-logo{
+    width: 100px;
+}
+.avatar-img{
+    width: 30px;
+    border-radius: 50%;
+
+}
+
+.carousel-item{
+    overflow-wrap: normal;
+    flex-wrap: nowrap;
+}
+
+.nowrap{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-wrap: normal;
+}
+
+.footer-div{
+    margin-top: 100px;
+    max-width: 50vw;
+
+}
+.link-icon{
+    font-size: 25px;
+}
+
+.footer-info{
+    font-size: 10px;
+}
+
+.copyright{
+    font-size: 10px;
+}
+
+.overflow-h{
+    overflow: hidden;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 4%;
+  background-color: transparent;
+  transition: background-color 1s;
+}
+
+
+.carousel-control-prev-icon , .carousel-control-next-icon {
+    opacity: 0;
+
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon ,
+.carousel-control-next:hover .carousel-control-next-icon{
+    opacity: 1;
+}
+
+.content-img{
+    transition: transform 0.5s;
+    position: relative;
+}
+
+
+
+.content-img:hover  {
+    transform: scale(1.2);
+    filter: blur(1px);
+    z-index: 1;
+}
+
+.content-img:hover .carousel-item{
+    overflow: visible;
+}
