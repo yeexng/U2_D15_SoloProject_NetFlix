@@ -1,13 +1,14 @@
 let url = "https://striveschool-api.herokuapp.com/api/movies";
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const id = urlParams.get("id");
-console.log(id); //this can be either id or nulll, depend where you click
+const params = new URLSearchParams(location.search)
+const id = params.get("id");
+console.log(id); //this can be either id or null, depend where you click
+
 //if null => POST
 //if id => PUT
 
 //Edit/PUT Data
 //Auto input the data
+
 // window.onload = async() =>{
 //   if(id !== null){
 //     let res = await fetch(url + "/" + id,{
@@ -17,11 +18,10 @@ console.log(id); //this can be either id or nulll, depend where you click
 //     },
 //   })
 //   let {name,description,category,imageUrl} = await res.json()
-//   document.querySelector("#name").value = name
-//   document.querySelector("#description").value = description
-//   document.querySelector("#category").value = category
+//   document.querySelector("#name").value = name,
+//   document.querySelector("#description").value = description,
+//   document.querySelector("#category").value = category,
 //   document.querySelector("#imageUrl").value = imageUrl
-  
 //   }
 // }
 
@@ -47,9 +47,6 @@ const editMovie = async (editMovie) =>{
 console.log(changed)
 }
     
-  
-    
-
 //Sending Data
 const sendData = async (movie) => {
   try {
@@ -76,4 +73,7 @@ const submitMovie = () => {
   };
   sendData(movie);
 };
+  
+    
+
 

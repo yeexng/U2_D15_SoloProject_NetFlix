@@ -1,12 +1,12 @@
-let url = "https://striveschool-api.herokuapp.com/api/movies/horror";
+let url = "https://striveschool-api.herokuapp.com/api/movies";
 
 window.onload = () => {
   getData();
 };
 
-const getData = async () => {
+const getData = async (str) => {
   try {
-    let res = await fetch(url, {
+    let res = await fetch(url + "/" + str, {
       headers: {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5NGRkNWU3MzczODAwMTUzNzQ0MDYiLCJpYXQiOjE2NzQyMTIwODAsImV4cCI6MTY3NTQyMTY4MH0.zN48s058sFaVM0Bbk-uaqF29hWCn4_jd6prsQCHQt-U",
@@ -37,7 +37,7 @@ const renderMovie = (arrayOfMovies) => {
               <a href="#" class="btn btn-primary">See More...</a>
               <br>
               <a href="backoffice.html?id=${_id}" class="btn btn-secondary"><i class="bi bi-pencil-square"></i></a>
-              <button class="btn btn-danger" onclick="deleteEvent("${_id}")"><i class="bi bi-trash"></i></button>
+              <button class="btn btn-danger" onclick="deleteEvent('${_id}')"><i class="bi bi-trash"></i></button>
           </div>
       </div>
     
@@ -47,7 +47,7 @@ const renderMovie = (arrayOfMovies) => {
 
 const deleteEvent = async(idToDelete) => {
   try { 
-    let res = await fetch (url + "/" + idToDelete,{
+    let res = await fetch ("https://striveschool-api.herokuapp.com/api/movies" + "/" + idToDelete,{
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",
@@ -55,8 +55,12 @@ const deleteEvent = async(idToDelete) => {
         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M5NGRkNWU3MzczODAwMTUzNzQ0MDYiLCJpYXQiOjE2NzQyMTIwODAsImV4cCI6MTY3NTQyMTY4MH0.zN48s058sFaVM0Bbk-uaqF29hWCn4_jd6prsQCHQt-U",
       })
     })
+    if(res.ok){
+      await getData()
+    }
     let deletedMovie = await res.json()
     
   } catch (error) {
+    console.log(error)
   }
 }

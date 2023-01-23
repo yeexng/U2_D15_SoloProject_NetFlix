@@ -92,10 +92,9 @@
                         </button>
 
                         <div class="dropdown-menu">
-                            <span class="dropdown-item-text">Bla Bla Bla</span>
-                            <a class="dropdown-item" href="#">Bla Bla Bla</a>
-                            <a class="dropdown-item" href="#">Bla Bla Bla</a>
-                            <a class="dropdown-item" href="#">Bla Bla Bla</a>
+                            <button class="dropdown-item" onclick="getData('horror')">Horror</button>
+                            <button class="dropdown-item" onclick="getData('comedy')">Comedy</button>
+                            <button class="dropdown-item" onclick="getData('romantic')">Romantic</button>
                         </div>
                     </div>
 
@@ -304,7 +303,21 @@
             </div>
 
             <div class="container-fluid my-5">
-                <h5 class="ml-2 mt-3 text-white">New Added</h5>
+                <div class="row">
+
+                    <h5 class="ml-2 mt-3 mr-2 text-white" id="genres">You Might Like...</h5>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle my-2 bg-transparent" type="button" data-toggle="dropdown" aria-expanded="false">
+                            Genres
+                        </button>
+
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" onclick="getData('horror')">Horror</button>
+                            <button class="dropdown-item" onclick="getData('comedy')">Comedy</button>
+                            <button class="dropdown-item" onclick="getData('romantic')">Romantic</button>
+                        </div>
+                    </div>
+                </div>
                 <div class="row edit-wrapper d-flex justify-content-center"></div>
 
 
